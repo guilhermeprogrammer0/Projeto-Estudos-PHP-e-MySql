@@ -112,11 +112,6 @@ function Excluir($conexao,$email,$senha,$id,$campo1,$campo2)
     }
     else
     {
-    $sql_teste = "SELECT * FROM clientes WHERE email = '$email' AND senha = '$senha'";
-    $consulta_teste  =  mysqli_query($conexao,$sql_teste);
-    $qtd_rows = mysqli_num_rows($consulta_teste);
-    
-
         $sql_exlcuir = "DELETE FROM clientes WHERE id = '$id'";
         $exclusao = mysqli_query($conexao,$sql_exlcuir);
 

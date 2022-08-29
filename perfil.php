@@ -53,7 +53,7 @@
         <?php while ($con = mysqli_fetch_array($consulta)) {
         ?>
             <div class="card" style="width: 18rem;">
-                <img src="https://cdn.icon-icons.com/icons2/2506/PNG/512/user_icon_150670.png" class="card-img-top" alt="LOGO">
+                <img src="https://t4.ftcdn.net/jpg/00/65/77/27/360_F_65772719_A1UV5kLi5nCEWI0BNLLiFaBPEkUbv5Fv.jpg" class="card-img-top" alt="LOGO">
                 <div class="card-body">
 
 
@@ -93,8 +93,8 @@
 
                     <div class="mb-3 form_confirmacao" id="form_exclusao">
                         <label for="recipient-name" class="col-form-label">E-mail</label>
-                        <input type="text" class="form-control" name="email">
-                        <label for="recipient-name" class="col-form-label">Senha</label>
+                        <input type="text" class="form-control" name="email" required>
+                        <label for="recipient-name" class="col-form-label" required>Senha</label>
                         <input type="password" class="form-control" name="senha">
                     </div>
                     <?php
