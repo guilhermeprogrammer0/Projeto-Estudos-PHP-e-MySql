@@ -84,8 +84,23 @@
     error_reporting(0);
     if ($_POST['enviar']) {
         if ($_POST) {
+            $nome = $_POST['nome'];
+            $email = $_POST['email'];
+            $senha = $_POST['senha'];
 
-            Cadastrar($conexao, $_POST['nome'], $_POST['email'], $_POST['senha']);
+            $sql_verificar = "SELECT email FROM clientes WHERE email = '$email'";
+            $sql_verificacao_existe = mysqli_query($conexao, $sql_verificar);
+            $qtd_linhas_verificar = mysqli_num_rows($sql_verificacao_existe);
+
+            if ($qtd_linhas_verificar > 0) {
+    ?>
+                <script>
+                    alert('Este E-mail já está em uso! Tente outro!');
+                </script>
+    <?php
+            } else {
+                Cadastrar($conexao, $nome, $email, $senha);
+            }
         }
     }
 

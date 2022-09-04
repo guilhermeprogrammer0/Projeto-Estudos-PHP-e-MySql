@@ -77,60 +77,54 @@ function Alterar($conexao, $id, $nome, $email, $senha)
     ?>
         <script>
             alert('Alteração Realizada com Sucesso! Atualize a Página!');
-
         </script>
-    <?php
+        <?php
         header("location: alteracao.php");
         $sql_modificacao = "SELECT * FROM clientes WHERE id = '$id'";
-        $modificado = mysqli_query($conexao,$sql_modificacao);
+        $modificado = mysqli_query($conexao, $sql_modificacao);
 
-        while($valor = mysqli_fetch_array($modificado))
-        {
+        while ($valor = mysqli_fetch_array($modificado)) {
             $_SESSION['email'] = $valor['email'];
             $_SESSION['senha'] = $valor['senha'];
         }
-
-       
     } else {
-    ?>
+        ?>
         <script>
             alert('Erro!!');
         </script>
-<?php
+    <?php
         header("location: alteracao.php");
     }
 }
 
-function Excluir($conexao,$email,$senha,$id,$campo1,$campo2)
+function Excluir($conexao, $email, $senha, $id, $campo1, $campo2)
 {
-   
-    if($campo1 != $email || $campo2 != $senha)
-    {
-        ?>
-        <script>alert('Email e/ou Senha não conferem com seu login');</script>
+
+    if ($campo1 != $email || $campo2 != $senha) {
+    ?>
+        <script>
+            alert('Email e/ou Senha não conferem com seu login');
+        </script>
         <?php
-    }
-    else
-    {
+    } else {
         $sql_exlcuir = "DELETE FROM clientes WHERE id = '$id'";
-        $exclusao = mysqli_query($conexao,$sql_exlcuir);
+        $exclusao = mysqli_query($conexao, $sql_exlcuir);
 
-        if($exclusao)
-        {
-            ?>
-            <script>alert('Seu Perfil foi Excluido');</script>
-            <?php
+        if ($exclusao) {
+        ?>
+            <script>
+                alert('Seu Perfil foi Excluido');
+            </script>
+        <?php
             session_destroy();
-        }
-        else{
-            ?>
-            <script>alert('Erro!');</script>
-            <?php
+        } else {
+        ?>
+            <script>
+                alert('Erro!');
+            </script>
+        <?php
         }
     }
-        
-    
-
 }
 
 
