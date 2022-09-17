@@ -31,7 +31,7 @@
                             <li><a class="dropdown-item" href="inicio.html">Início</a></li>
                             <li><a class="dropdown-item" href="cadastro.php">Cadastre - se</a></li>
                             <li><a class="dropdown-item" href="logar.php">Entrar</a></li>
-                            <li><a class="dropdown-item" href="https://github.com/guilhermeprogrammer0">Conhecer mais</a></li>
+                            <li><a class="dropdown-item" href="https://github.com/guilhermeprogrammer0" target="_blank">Conhecer mais</a></li>
                         </ul>
                     </li>
                 </ul>
